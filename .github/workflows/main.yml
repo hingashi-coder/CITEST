@@ -19,6 +19,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Notify BUILD & DEPLOY START.
+        run: |
+          curl -X POST --data-urlencode "payload={\"channel\": \"#devnotify\", \"username\": \"webhookbot\", \"text\": \"This is posted to #devnotify and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}" ${{ secrets.NOTIFY_TOKEN }} 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
