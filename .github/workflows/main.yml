@@ -23,7 +23,8 @@ jobs:
         env:
           NOTIFY_TOKEN: ${{ secrets.NOTIFY_TOKEN }}
         run: |
-          curl -X POST --data-urlencode "payload={\"channel\": \"#devnotify\", \"username\": \"webhookbot\", \"text\": \"This is posted to #devnotify and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}" ${NOTIFY_TOKEN} 
+          echo ${NOTIFY_TOKEN}
+          #curl -X POST --data-urlencode "payload={\"channel\": \"#devnotify\", \"username\": \"webhookbot\", \"text\": \"This is posted to #devnotify and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}" ${NOTIFY_TOKEN} 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
