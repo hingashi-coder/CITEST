@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Notify BUILD & DEPLOY START.
         env:
-          NOTIFY_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          NOTIFY_TOKEN: ${{ secrets.SLACK_NOTIFY }}
         run: |
           echo ${NOTIFY_TOKEN}
           curl -X POST --data-urlencode "payload={\"channel\": \"#devnotify\", \"username\": \"webhookbot\", \"text\": \"This is posted to #devnotify and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}" ${NOTIFY_TOKEN} 
