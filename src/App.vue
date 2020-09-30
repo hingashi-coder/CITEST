@@ -2,6 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>自動更新テスト</h1>
+    <router-link to="next" tag="a">次へ</router-link>
     <router-view/>
   </div>
 </template>
